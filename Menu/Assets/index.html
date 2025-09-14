@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MENU</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <h1>MENU</h1>
+            <p class="tagline">Good food is the foundation of genuine happiness.</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-controls">
+            <h2>Organize Your Menu</h2>
+            <div class="controls-wrapper">
+                <fieldset id="preference-filters" class="filters">
+                    <legend class="visually-hidden">Dietary Filters</legend>
+                    <label><input type="checkbox" value="all"> All</label>
+                    <label><input type="checkbox" value="vegetarian"> Vegetarian</label>
+                    <label><input type="checkbox" value="non-vegetarian"> Non-Vegetarian</label>
+                    <label><input type="checkbox" value="vegan"> Vegan</label>
+                    <label><input type="checkbox" value="gluten-free"> Gluten-Free</label>
+                    <label><input type="checkbox" value="spicy"> Spicy</label>
+                    <label><input type="checkbox" value="contains-nuts"> Contains Nuts</label>
+                </fieldset>
+
+                <input type="text" id="search-bar" class="search-input" placeholder="Search dishes..." aria-label="Search dishes">
+
+                <div id="view-switcher" class="view-switcher" role="radiogroup" aria-label="View mode">
+                    <button data-view="grid" class="view-btn" role="radio" aria-checked="true">Grid</button>
+                    <button data-view="list" class="view-btn" role="radio" aria-checked="false">List</button>
+                </div>
+
+                <div class="sort-container">
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by" class="sort-select" aria-label="Sort by">
+                        <option value="default">Default</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                    </select>
+                </div>
+
+                <input type="number" id="max-price-input" class="price-input" placeholder="Max Price (₹)" aria-label="Max price">
+            </div>
+        </div>
+
+        <!-- Invisible trigger for the sticky controls animation -->
+        <div id="controls-scroll-trigger" aria-hidden="true"></div>
+
+        <div id="menu-container" class="menu-container" aria-live="polite">
+            <!-- Menu items dynamically inserted -->
+        </div>
+    </main>
+
+    <div class="cart-container" aria-hidden="false">
+        <div id="cart-icon" class="cart-icon" title="Open cart" role="button" aria-pressed="false">
+            <span class="cart-icon-svg" role="img" aria-label="Shopping cart">🛒</span>
+            <span id="cart-count" class="cart-count">0</span>
+        </div>
+
+        <div id="cart-panel" class="cart-panel" aria-hidden="true">
+            <h2>Your Order</h2>
+            <button class="close-cart-btn" aria-label="Close cart">&times;</button>
+            <div id="cart-items" class="cart-items-list" role="region" aria-label="Cart items">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <div class="cart-total">
+                <h3>Total:</h3>
+                <span id="cart-total-price">₹0</span>
+            </div>
+            <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- small helper element used as animation target (no content) -->
+    <div id="fly-zone" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
