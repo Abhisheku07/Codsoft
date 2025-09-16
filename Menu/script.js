@@ -4,7 +4,7 @@ const fullMenu = [
     { id: 1, name: "Vegetable Samosa", category: "Appetizers", description: "Crispy pastry filled with spiced potatoes and peas. Served with tamarind chutney.", price: 120, image: "assets/vegetable_Samosa.png", tags: ["vegetarian", "vegan"] },
     { id: 2, name: "Paneer Tikka", category: "Appetizers", description: "Cubes of paneer marinated in yogurt and spices, grilled in a tandoor.", price: 250, image: "assets/Paneer_Tikka.png", tags: ["vegetarian", "gluten-free"] },
     { id: 3, name: "Aloo Tikki Chaat", category: "Appetizers", description: "Spiced potato patties topped with yogurt, chutneys, and sev.", price: 180, image: "assets/Aloo-Tikki.png", tags: ["vegetarian"] },
-    { id: 4, name: "Chicken 65", category: "Appetizers", description: "Spicy, deep-fried chicken chunks from Chennai.", price: 280, image: "assets/Chicken 65.png", tags: ["spicy", "non-vegetarian"] },
+    { id: 4, name: "Chicken 65", category: "Appetizers", description: "Spicy, deep-fried chicken chunks from Chennai.", price: 280, image: "Menu/assets/Chicken 65.png", tags: ["spicy", "non-vegetarian"] },
     { id: 28, name: "Gobi Manchurian", category: "Appetizers", description: "Crispy cauliflower tossed in Manchurian sauce.", price: 260, image: "assets/Gobi Manchurian.png", tags: ["vegetarian", "vegan", "spicy"] },
 
     // New Starters / Fusion
@@ -600,3 +600,4 @@ cartItemsContainer.addEventListener('click', (e) => {
         updateSingleMenuItem(id);
     }
 });
+
